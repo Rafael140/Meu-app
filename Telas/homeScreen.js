@@ -6,7 +6,6 @@ import {
     StyleSheet,
     View
 } from "react-native";
-import questionScreen from "./question";
 
 export default class HomeScreen extends Component {
 
@@ -18,10 +17,18 @@ export default class HomeScreen extends Component {
                 Aplicativo de tomar Água
               </Text>
               <TouchableOpacity 
-                style={styles.button}
+                style={styles.firstButton}
                 onPress = {() => this.props.navigation.navigate('questionScreen')}>
-                <Text style={styles.buttonText}>
-                  Entrar no App
+                <Text style={styles.firstButtonText}>
+                  Primeira vez usando o App
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity 
+                style={styles.secondButton}
+                onPress = {() => this.props.navigation.navigate('chooseAlarmScreen')}>
+                <Text style={styles.secondButtonText}>
+                  Já uso o App
                 </Text>
               </TouchableOpacity>
             </View>
@@ -45,19 +52,34 @@ const styles = StyleSheet.create({
         textAlign:"center",
         marginTop:100
     }, 
-    button:{
-        width: 100,
+    firstButton:{
+        width: 120,
         height: 50,
         marginTop: 200,
         padding: 10,
-        alignSelf: "center",
+        marginLeft: 50,
         backgroundColor:"lightblue"
     },
-    buttonText:{
+    firstButtonText:{
         textAlign: "center",
         fontSize: 15,
         fontWeight:"bold",
+    },
+    secondButton:{
+        width: 100,
+        height: 50,
+        marginTop: -50,
+        padding: 10,
+        marginLeft: 200,
+        backgroundColor:"lightblue"
+    },
+    secondButtonText:{
+        textAlign: "center",
+        fontSize: 15,
+        fontWeight:"bold",
+        marginTop: 7
     }
+
 })
 
 /* 

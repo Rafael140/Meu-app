@@ -9,16 +9,6 @@ import {
 } from "react-native";
 
 export default class questionScreen extends Component {
-    
-    //const [textInputPeso, setTextInputPeso] = React.useState('');
-    //const checkTextInput = () => {
-    //  if (!textInputPeso.trim()) {
-    //    alert('Digite o Peso!!!!!');
-    //    return;
-    //  }
-    //};
-    //&& checkTextInput()
-    //onChangeText={(value) => setTextInputPeso(value)}
 
     render(){
       return(
@@ -30,6 +20,7 @@ export default class questionScreen extends Component {
                 style = {styles.textInput}
                 placeholder = "Exemplo: 54,5"
                 placeholderTextColor={"black"}
+                onChangeText={(value) => setTextInputPeso(value)}
                 />
               <TouchableOpacity 
                 style = {styles.buttonSubmit} 
