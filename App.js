@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import HomeScreen from "./Telas/homeScreen"
 import questionScreen from "./Telas/question";
+import chooseAlarmScreen from "./Telas/chooseAlarmScreen";
+import endScreen from "./Telas/endScreen";
+import alarmScreen from "./Telas/alarmScreen"
 import { createAppContainer, createSwitchNavigator} from 'react-navigation'; 
 import { View } from "react-native";
 
@@ -17,7 +20,8 @@ export default class App extends Component{
 var switchContainer = createSwitchNavigator({
     HomeScreen : HomeScreen,
     questionScreen: questionScreen,
-    //chooseAlarmScreen: chooseAlarmScreen,
+    chooseAlarmScreen: chooseAlarmScreen,
+    endScreen: endScreen
     //alarmScreen: alarmScreen
 })
 

@@ -14,16 +14,22 @@ export default class chooseAlarmScreen extends Component{
         return(
             <View style = {styles.container}>
                 <Text style = {styles.informationText}>
-                    Insira o intervalo do alarme. 
-                    Exemplo: 02:00
+                    Insira o intervalo do alarme.
                 </Text>
                 <TextInput 
                   style = {styles.textInput} 
+                  placeholder = "Exemplo: 02:00"
+                  placeholderTextColor={"black"}
                   onChangeText={(text) => {
                     this.setState({ hora: text });
                   }}
-                  value = {this.state.hora}/>
-                <TouchableOpacity style = {styles.buttonSubmit}>
+                  value = {this.state}/>
+                  <Text>
+                    
+                  </Text>
+                <TouchableOpacity 
+                  style = {styles.buttonSubmit} 
+                  onPress = {() => this.props.navigation.navigate('endScreen')}>
                     <Text style = {styles.textButtonStyle}>
                         Pronto
                     </Text>
@@ -35,13 +41,16 @@ export default class chooseAlarmScreen extends Component{
 
 const styles = StyleSheet.create({
     container:{
-        flex:1
+        flex:1,
+        backgroundColor:"#10A8C9"
     },
     informationText:{
-        fontSize:15
+        marginTop: 50,
+        fontSize:40,
+        textAlign:"center"
     },
     textInput:{
-        marginTop: 20,
+        marginTop: 150,
         width: '80%',
         alignSelf: 'center',
         height: 40,
@@ -52,7 +61,7 @@ const styles = StyleSheet.create({
     buttonSubmit:{
         width: 100,
         height: 50,
-        marginTop: 300,
+        marginTop: 200,
         padding: 10,
         alignSelf: "center",
         backgroundColor:"lightblue"
@@ -61,5 +70,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 15,
         fontWeight:"bold",
+        marginTop:7
     }
 })
